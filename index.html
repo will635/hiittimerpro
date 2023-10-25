@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HIIT Timer</title>
+        <!--Meta Tags-->
+        <meta name="keywords" content="hiit, interval workout, workout, hiit timer">
+        <meta charset="utf-8">
+        <meta name="theme-color" content="#29282f">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="a timer app for hiit workouts">
+        <!--Links-->
+        <link rel="shortcut Icon" type="image/x-icon" href="icon-512x512.png">
+        <link rel="apple-touch-icon" href="icon-192x192.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit&family=PT+Sans&display=swap" rel="stylesheet">
+        <!--Link external files JS, CSS, Manifest-->
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <link rel="manifest" href="manifest.json">  
+    
+    </head>
+    <body>
+        <h1>HIIT Timer Pro</h1>
+        <section id="setup">
+            <h3>Details: </h3>
+            <form>
+                <span>Name: </span>
+                <input type="text" value="My HIIT Timer" id="title">
+                <span>Sets: </span>
+                <input type="number" value="6" id="totalSets">
+            </form>
+            <h3>Warmup / Cooldown: </h3>
+            <form>
+                <span>Duration: </span>
+                <input type="number" id="warmupCooldown" value="180">
+                <span>Colour: </span>
+                <select id="warmupCooldownColour">
+                    <option value="1" selected="selected">Green</option>
+                    <option value="2">Blue</option>
+                    <option value="3">Red</option>
+                    <option value="4">Yellow</option>
+                    <option value="5">Black</option>
+                    <option value="6">Purple</option>
+                </select>
+            </form>
+            <h3>High Effort: </h3>
+            <form>
+                <span>Name: *RPE = Rate of Percieved Effort</span>
+                <input type="text" value="High RPE" id="effortName">
+                <span>Duration: </span>
+                <input type="number" value="30" id="effortTime">
+                <span>Colour:</span>
+                <select id="hardColour">
+                    <option value="2" selected="selected" >Blue</option>
+                    <option value="1">Green</option>
+                    <option value="3">Red</option>
+                    <option value="4">Yellow</option>
+                    <option value="5">Black</option>
+                    <option value="6">Purple</option>
+                </select>
+            </form>
+            <h3>Rest: </h3>
+            <form>
+                <span>Name: </span>
+                <input type="text" value="Rest" id="restName">
+                <span>Duration: </span>
+                <input type="number" value="60" id="restTime">
+                <span>Colour:</span>
+                <select id="restColour">
+                    <option value="3" selected="selected">Red</option>
+                    <option value="2">Blue</option>
+                    <option value="1">Green</option>
+                    <option value="4">Yellow</option>
+                    <option value="5">Black</option>
+                    <option value="6">Purple</option>
+                </select>
+            </form>
+      
+            <button id="generateTimer" onclick="getVariables()">Generate Timer</button>
+        </section>
+
+        <!--Start of actual HIIT interface-->
+
+
+        <h1 id="hiitTitle">TITLE</h1>
+
+
+       <center><main id="hiit">
+            <div id="time"><button onclick="warmupTimer()" id="startWorkout">Start</button></div>
+            <h4 id="elapse">ELAPSED: <span id="elapsed"></span></h4>
+            <h4 id="remain">REMAINING: <span id="remaining"></span></h4>
+            <h4 id="sets">SETS:  <span id="set"></span></h4>
+            <button id="cancel" onclick="stop()">X</button>
+            <button id="pause" onclick="pause()">| |</button>
+            <h4 id="work">WORK</h4>
+            <h4 id="rest">REST</h4>
+
+
+       </main></center>
+
+    </body>
+</html>
